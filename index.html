@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ütopya Band - Blues Rock Music</title>
+
+    <!-- ==================== GOOGLE FONTS ==================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ==================== NAVBAR ==================== -->
+    <nav id="nav">
+        <div class="container">
+            <a href="#" class="logo">ÜTOPYA</a>
+
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" onclick="closeMenu()">Hakkımızda</a></li>
+                <li><a href="#music" onclick="closeMenu()">Müzik</a></li>
+                <li><a href="#videos" onclick="closeMenu()">Videolar</a></li>
+                <li><a href="#merchandise" onclick="closeMenu()">Ürünler</a></li>
+                <li><a href="#gallery" onclick="closeMenu()">Galeri</a></li>
+                <li><a href="#events" onclick="closeMenu()">Konserler</a></li>
+                <li><a href="#contact" onclick="closeMenu()">İletişim</a></li>
+
+                <!-- ALIŞVERİŞ SEPETİ İKONU -->
+                <li>
+                    <div class="cart-icon" onclick="toggleCart()">
+                        🛒
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ==================== ALIŞVERİŞ SEPETİ PANEL ==================== -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Sepetim</h2>
+            <button class="cart-close" onclick="toggleCart()">✕</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Sepet boş mesajı -->
+            <div class="cart-empty" id="cartEmpty">
+                Sepetiniz boş
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span class="cart-total-amount" id="cartTotal">₺0</span>
+            </div>
+            <button class="cart-checkout" onclick="checkout()">Satın Al</button>
+        </div>
+    </div>
+
+    <!-- ==================== HERO BÖLÜMÜ ==================== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>ÜTOPYA</h1>
+            <p class="hero-tagline">MELANKOLİ DEVRİMLE BULUŞUYOR</p>
+            <a href="#music" class="hero-cta">ŞİMDİ DİNLE</a>
+        </div>
+    </section>
+
+    <!-- ==================== HAKKIMIZDA BÖLÜMÜ ==================== -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hikayemiz</h2>
+                <p class="section-subtitle">Kaostan doğduk, sessizlikte olgunlaştık</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Ütopya, 2019 yılında yeraltı müzik sahnesinden doğdu. Geleneksel sınırları aşan sesler yaratarak
+                        teselli bulan dört ruhun birleşmesiyle oluştuk. Biz sadece bir grup değiliz — sonik manzaralar
+                        aracılığıyla insan duygularının derinliklerini keşfeden yaratıcı bir kolektifiz.</p>
+
+                    <p>Müziğimiz <strong>melankolik melodileri</strong> <strong>güçlü yükselişlerle</strong>
+                        harmanlayarak, derinden hissedenlere hitap eden atmosferik bir yolculuk yaratıyor. Post-rock,
+                        indie alternatif ve sinematik soundscape'lerden etkilenerek, hepimizin içinde yaşanan sessiz
+                        devrimlere seslenen şarkılar üretiyoruz.</p>
+
+                    <p>Çaldığımız her nota, çok gürültülü bir dünyada anlam arayışıdır. Sizi bu güzel, ürkütücü ütopya
+                        arayışımıza katılmaya davet ediyoruz.</p>
+                </div>
+
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MÜZİK BÖLÜMÜ ==================== -->
+    <section id="music">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Dinle</h2>
+                <p class="section-subtitle">Son yayınlarımızı dinleyin</p>
+            </div>
+
+            <div class="music-grid">
+                <div class="music-player">
+                    <h3>Son Albüm</h3>
+                    <iframe class="player-embed"
+                        src="https://open.spotify.com/embed/album/5iiRfdPFKoDKAVau2Ir5Yy?utm_source=generator&theme=0"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+
+                <div class="music-player">
+                    <h3>Popüler Şarkılar</h3>
+                    <iframe class="player-embed"
+                        src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6ujZpAN0v9r?utm_source=generator&theme=0"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== VİDEOLAR BÖLÜMÜ ==================== -->
+    <section id="videos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Görsel Hikayeler</h2>
+                <p class="section-subtitle">Canlı performanslar & müzik videoları</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe width="100%" height="352"
+                        src="https://www.youtube.com/embed/gVboNGU04xM?si=FtFtWB7RCES31Kif" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/aWIE0PX5vSQ?si=JwjOUhQp5A3AEF5N" allowfullscreen
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MERCHANDISE BÖLÜMÜ (YENİ!) ==================== -->
+    <section id="merchandise">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Merchandise</h2>
+                <p class="section-subtitle">Ütopya'yı yanınızda taşıyın</p>
+            </div>
+
+            <div class="merch-grid">
+                <!-- ÜRÜN 1: TİŞÖRT -->
+                <div class="merch-item">
+                    <div class="merch-image">
+                        <!-- BURAYA ÜRÜN FOTOĞRAFI EKLEYEBİLİRSİNİZ -->
+                        <!-- CSS ile: background-image: url('tshirt.jpg'); -->
+                    </div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Ütopya Logo T-Shirt</h3>
+                        <p class="merch-description">Siyah pamuklu tişört, minimal logo baskı. %100 organik pamuk.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺350</span>
+                            <button class="add-to-cart" onclick="addToCart('Ütopya Logo T-Shirt', 350)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÜRÜN 2: HOODİE -->
+                <div class="merch-item">
+                    <div class="merch-image"></div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Melancholy Hoodie</h3>
+                        <p class="merch-description">Oversize kesim sweatshirt, sırt baskılı. Rahat ve sıcak.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺650</span>
+                            <button class="add-to-cart" onclick="addToCart('Melancholy Hoodie', 650)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÜRÜN 3: TOTE BAG -->
+                <div class="merch-item">
+                    <div class="merch-image"></div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Canvas Tote Bag</h3>
+                        <p class="merch-description">Tuval bez çanta, el baskı detaylar. Sürdürülebilir ve şık.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺200</span>
+                            <button class="add-to-cart" onclick="addToCart('Canvas Tote Bag', 200)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÜRÜN 4: POSTER -->
+                <div class="merch-item">
+                    <div class="merch-image"></div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Limited Edition Poster</h3>
+                        <p class="merch-description">50x70cm poster, mat kağıt. Sınırlı sayıda üretim.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺150</span>
+                            <button class="add-to-cart" onclick="addToCart('Limited Edition Poster', 150)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÜRÜN 5: VİNYL -->
+                <div class="merch-item">
+                    <div class="merch-image"></div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Debut Album Vinyl</h3>
+                        <p class="merch-description">İlk albümümüz özel baskı plak formatında. Koleksiyonluk.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺450</span>
+                            <button class="add-to-cart" onclick="addToCart('Debut Album Vinyl', 450)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ÜRÜN 6: STICKER PACK -->
+                <div class="merch-item">
+                    <div class="merch-image"></div>
+                    <div class="merch-details">
+                        <h3 class="merch-name">Sticker Pack</h3>
+                        <p class="merch-description">6 adet su geçirmez sticker. Laptop, gitara yapıştırın.</p>
+                        <div class="merch-footer">
+                            <span class="merch-price">₺75</span>
+                            <button class="add-to-cart" onclick="addToCart('Sticker Pack', 75)">
+                                SEPETE EKLE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALERİ BÖLÜMÜ ==================== -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Anlar</h2>
+                <p class="section-subtitle">Konser anıları & sahne arkası</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ETKİNLİKLER BÖLÜMÜ ==================== -->
+    <section id="events">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Canlı Konserler</h2>
+                <p class="section-subtitle">Sahnede buluşalım</p>
+            </div>
+
+            <div class="events-list">
+                <div class="event-item">
+                    <div class="event-date">MART<br>15</div>
+                    <div class="event-details">
+                        <h3>Bahar Uyanışı Festivali</h3>
+                        <p class="event-location">İstanbul, Zorlu PSM</p>
+                    </div>
+                    <a href="#" class="event-ticket">BİLET AL</a>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">NİSAN<br>08</div>
+                    <div class="event-details">
+                        <h3>Gece Yarısı Seansları</h3>
+                        <p class="event-location">Ankara, IF Performance Hall</p>
+                    </div>
+                    <a href="#" class="event-ticket">BİLET AL</a>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">MAYIS<br>22</div>
+                    <div class="event-details">
+                        <h3>Sessizliğin Sesleri Turu</h3>
+                        <p class="event-location">İzmir, Bostanlı Açık Hava</p>
+                    </div>
+                    <a href="#" class="event-ticket">BİLET AL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== İLETİŞİM BÖLÜMÜ ==================== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">İletişime Geçin</h2>
+                <p class="section-subtitle">Birlikte güzel bir şeyler yaratalım</p>
+            </div>
+
+            <div class="contact-content">
+                <a href="mailto:contact@utopyaband.com" class="contact-email">contact@utopyaband.com</a>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/utopyaband" class="social-link" target="_blank"
+                        aria-label="Instagram">IG</a>
+                    <a href="https://open.spotify.com/artist/utopyaband" class="social-link" target="_blank"
+                        aria-label="Spotify">SP</a>
+                    <a href="https://www.youtube.com/@utopyaband" class="social-link" target="_blank"
+                        aria-label="YouTube">YT</a>
+                    <a href="https://twitter.com/utopyaband" class="social-link" target="_blank"
+                        aria-label="Twitter">X</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; 2026 Ütopya Band. Tüm hakları saklıdır. Ruhla tasarlandı.</p>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT KODLARI ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
