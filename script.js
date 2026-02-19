@@ -8,7 +8,8 @@ function toggleCart() {
 }
 
 // Sepete ürün ekle
-function addToCart(productName, price) {
+// Sepete ürün ekle
+function addToCart(productName, price, event) {
     // Ürünü sepete ekle
     cart.push({
         name: productName,
@@ -20,11 +21,8 @@ function addToCart(productName, price) {
     updateCart();
 
     // Geri bildirim - buton animasyonu
-    // Not: Inline event handler'larda 'event' global nesnesi mevcuttur (window.event veya argument)
-    // Ancak setTimeout içinde 'event' nesnesi kaybolabilir veya değişebilir, bu yüzden hedefi önce saklıyoruz.
-    const button = (typeof event !== 'undefined') ? event.target : window.event.target;
-
-    if (button) {
+    if (event && event.target) {
+        const button = event.target;
         const originalText = button.textContent;
         button.textContent = '✓ EKLENDİ';
         setTimeout(() => {
@@ -168,10 +166,10 @@ if (window.supabase) {
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
     const hamburger = document.querySelector('.hamburger');
-    
+
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('active');
-    
+
     // Prevent scrolling when menu is open
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
 }
@@ -179,7 +177,7 @@ function toggleMenu() {
 function closeMenu() {
     const navLinks = document.getElementById('navLinks');
     const hamburger = document.querySelector('.hamburger');
-    
+
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
     document.body.style.overflow = '';
@@ -189,9 +187,9 @@ function closeMenu() {
 document.addEventListener('click', (e) => {
     const navLinks = document.getElementById('navLinks');
     const hamburger = document.querySelector('.hamburger');
-    
-    if (navLinks.classList.contains('open') && 
-        !navLinks.contains(e.target) && 
+
+    if (navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
         !hamburger.contains(e.target)) {
         closeMenu();
     }
