@@ -889,7 +889,6 @@ footer p {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* ==================== MOBİL UYUMLULUK ==================== */
 /* ==================== MOBİL UYUMLULUK (max-width: 768px) ==================== */
 @media (max-width: 768px) {
 
